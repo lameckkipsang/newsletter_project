@@ -129,6 +129,8 @@ MAILERS = {
             "host": "smtp.gmail.com",
             "port": 587,
             "use_tls": True,
+            "use_ssl": False,
+            "timeout": 10,
             "username": config('EMAIL_HOST_USER'),
             "password": config('EMAIL_HOST_PASSWORD'),
         },

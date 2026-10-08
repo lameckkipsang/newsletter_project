@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.shortcuts import render
 from django.core.mail import send_mail
 from django.conf import settings
 from .forms import SubscriberForm
@@ -32,7 +31,8 @@ def subscribe(request):
                 )
                 success_message = "Subscription successful! Please check your inbox for a confirmation email."
             except Exception as e:
-                success_message = "Subscribed successfully, but confirmation email could not be sent."
+                print(f"--- GMAIL SMTP ERROR: {e} ---") 
+                success_message = f"Subscribed, but email failed: {e}"
             
             form = SubscriberForm()
     else:
